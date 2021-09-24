@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#43cea2 0%, #185a9d 100%);
+    min-height: 100vh;
+}
+
+.wrapper {
+    width: 400px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+}
+
+.wrapper header {
+    border: 1px solid #ccc;
+    border-radius: 32px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 55px;
+}
+
+header label {
+    font-size: 18px;
+    cursor: pointer;
+    height: 100%;
+    width: 33.4%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    z-index: 1;
+}
+
+header .slider {
+    position: absolute;
+    background: linear-gradient(145deg, #43cea2 0%, #185a9d 100%);
+    height: 85%;
+    border-radius: inherit;
+    transition: all 0.3s ease;
+}
+
+#tab-1:checked~header .tab-1,
+#tab-2:checked~header .tab-2,
+#tab-3:checked~header .tab-3 {
+    color: #fff;
+}
+
+#tab-1:checked~header .slider {
+    left: 0%;
+    width: 30%;
+    transform: translateX(5%);
+}
+
+#tab-2:checked~header .slider {
+    left: 50%;
+    width: 40%;
+    transform: translateX(-50%);
+}
+
+#tab-3:checked~header .slider {
+    left: 100%;
+    width: 30%;
+    transform: translateX(-105%);
+}
+
+.wrapper input[type="radio"] {
+    display: none;
+}
+
+.row .price {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+}
+
+.price span {
+    font-size: 70px;
+    font-weight: 600;
+    font-family: "Noto Sans", sans-serif;
+    position: relative;
+}
+
+.price p {
+    font-size: 18px;
+}
+
+.price span::before,
+.price span::after {
+    position: absolute;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+}
+
+.price span::before {
+    content: "$";
+    font-size: 20px;
+    top: 10px;
+    left: -14px;
+}
+
+.price span::after {
+    content: "/mon";
+    font-size: 15px;
+    right: -37px;
+    bottom: 10px;
+}
+
+.card-area {
+    overflow: hidden;
+}
+
+.cards {
+    display: flex;
+    width: 300%;
+}
+
+.cards .row {
+    width: 33.4%;
+}
+
+.cards .row-1 {
+    transition: all 0.3s ease;
+}
+
+#tab-1:checked~.card-area.cards .row-1 {
+    margin-left: 0%;
+}
+
+#tab-2:checked~.card-area .cards .row-1 {
+    margin-left: -33.4%;
+}
+
+#tab-3:checked~.card-area .cards .row-1 {
+    margin-left: -66.8%;
+}
+
+.feature {
+    margin: 5px;
+}
+
+.feature li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+}
+
+.feature li i {
+    color: #2566a7bb;
+    margin-right: 10px;
+}
+
+.feature li span {
+    font-size: 15px;
+}
+
+.card-area button {
+    width: 100%;
+    height: 55px;
+    border-radius: 32px;
+    border: none;
+    background: linear-gradient(#43cea2 0%, #185a9d 100%);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 12px;
+}
+
+.card-area button:hover {
+    transform: scale(0.98);
+}
